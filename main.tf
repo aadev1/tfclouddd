@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "diamond_dogs" {
-  name     = "${var.prefix}-rg"
+  name     = "${var.prefix}-rg2"
   location = var.region
 }
 
