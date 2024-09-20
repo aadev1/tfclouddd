@@ -5,6 +5,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "diamond_dogs" {
   name     = "${var.prefix}-rg2"
   location = var.region
+
+  tags = {
+    projectcode = var.project
+  }
 }
 
 resource "azurerm_virtual_network" "diamond_dogs" {
