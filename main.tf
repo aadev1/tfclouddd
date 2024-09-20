@@ -3,12 +3,12 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "diamond_dogs" {
-  name     = "${var.prefix}-rg"
+  name     = "${var.prefix}-${var.environment}-rg"
   location = var.region
 }
 
 resource "azurerm_virtual_network" "diamond_dogs" {
-  name                = "${var.prefix}-vnet"
+  name                = "${var.prefix}-${var.environment}-vnet"
   address_space       = [var.address_space]
   location            = azurerm_resource_group.diamond_dogs.location
   resource_group_name = azurerm_resource_group.diamond_dogs.name
